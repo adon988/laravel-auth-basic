@@ -8,10 +8,10 @@
     echo '加入變更檔案';
 
     @if($commit)
-        git commit -m"未傳入參數" 
+        git commit -m"{{$commit}}" 
         echo '傳入參數';
     @else
-        git commit -m"{{$commit}}" 
+        git commit -m"未傳入參數至commit"  
         echo '未傳入參數';
     @endif
 
