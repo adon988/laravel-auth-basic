@@ -9,10 +9,10 @@
 
     @if($commit)
         git commit -m"未傳入參數" 
-        echo "傳入參數"";
+        echo '傳入參數';
     @else
         git commit -m"{{$commit}}" 
-        echo "未傳入參數";
+        echo '未傳入參數';
     @endif
 
     echo '執行commit';
