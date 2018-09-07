@@ -7,7 +7,6 @@
 @endtask
 
 @task('pull')
-
     git pull
     git status
 @endtask
