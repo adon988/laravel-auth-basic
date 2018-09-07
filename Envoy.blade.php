@@ -1,6 +1,8 @@
 
 @servers(['web' => 'localhost'])
-
+@setup
+    $now = date("Y-m-d H:i:s");
+@endsetup
 @task('deploy')
 
     echo '準備 deploy';
@@ -8,10 +10,10 @@
     echo '加入變更檔案';
 
     @if($commit)
-        git commit -m"{{$commit}}" 
+        git commit -m"{{$commit}} {{$now}}" 
         echo '傳入參數至';
     @else
-        git commit -m"未傳入參數至commit"  
+        git commit -m"未傳入參數至commit {{$now}}"  
         echo '未傳入參數';
     @endif
 
