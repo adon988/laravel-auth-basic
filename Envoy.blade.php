@@ -1,14 +1,13 @@
+
 @servers(['web' => 'localhost'])
-
-@setup
-$now = new DateTime();
-
-$commit = isset($myparam) ? $myparam : "commit at time".$now;
-@endsetup
 
 @task('deploy')
     git add -A
-    git commit -m"{{$commit}}"
+
+    @if $commit
+        git commit -m"{{$commit}}" 
+    ＠endif
+
     git push origin master
 @endtask
 
