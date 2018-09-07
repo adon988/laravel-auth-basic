@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/login',function(){
     return 'please login';
 })->name('login');
+
+Route::get('/register', function(){
+    return 'register';
+})->name('register');
