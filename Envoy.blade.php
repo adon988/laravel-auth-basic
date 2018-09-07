@@ -1,5 +1,5 @@
 @servers(['web' => 'localhost'])
-
+ 
 @task('deploy')
     git add -A
     git commit -m"updating by cicd"
