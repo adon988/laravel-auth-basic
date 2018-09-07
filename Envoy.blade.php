@@ -5,7 +5,7 @@
     $now = date("Y-m-d H:i:s");
 @endsetup
 
-@story('deploy', ['on' => 'web', 'confirm' => true])
+@story('deploy')
     add
     commit
     push
@@ -37,3 +37,7 @@
     git pull
     git status
 @endtask
+
+@finished
+    echo '完成所有程序';
+@endfinished
