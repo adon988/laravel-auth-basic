@@ -11,12 +11,12 @@
     push
 @endstory
 
-@task('add', ['on' => 'web', 'confirm' => true])
+@task('add', ['on' => 'web'])
     git add -A
     echo '加入變更檔案';
 @endtask
 
-@task('commit', ['on' => 'web', 'confirm' => true])
+@task('commit', ['on' => 'web'])
     @if($commit)
         git commit -m"{{$commit}} {{$now}}" 
         echo '傳入參數至';
@@ -28,7 +28,7 @@
     echo '執行commit';
 @endtask
 
-@task('push', ['on' => 'web', 'confirm' => true])
+@task('push', ['on' => 'web'])
     git push origin master
     echo '推送執行完畢';
 @endtask
