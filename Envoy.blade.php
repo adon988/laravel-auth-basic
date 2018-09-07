@@ -2,13 +2,23 @@
 @servers(['web' => 'localhost'])
 
 @task('deploy')
-    git add -A
 
-    @if $commit
+    echo '準備 deploy';
+    git add -A
+    echo '加入變更檔案';
+
+    @if($commit)
+        git commit -m"未傳入參數" 
+        echo "傳入參數"";
+    @else
         git commit -m"{{$commit}}" 
-    ＠endif
+        echo "未傳入參數";
+    @endif
+
+    echo '執行commit';
 
     git push origin master
+    echo '推送執行完畢';
 @endtask
 
 @task('pull')
